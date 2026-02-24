@@ -12,18 +12,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- fonts  -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-<!-- icons  -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<style>
-    *{
-        font-family: "Outfit", sans-serif;
-    }
-</style>
+    <style>
+        * {
+            font-family: "Outfit", sans-serif;
+        }
+    </style>
 </head>
 
 <body class="min-h-screen max-w-md bg-base-200 mx-auto">
@@ -76,7 +78,39 @@
         </div>
     </section>
 
-    <section id="cashout" class="w-11/12 mx-auto py-5">
+    <section id="add-money" class="w-11/12 mx-auto py-5">
+        <h2 class="text-xl font-bold mb-5">Add Money</h2>
+        <div class="card bg-base-100 w-full shadow rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label text-neutral font-bold">Select Bank</label>
+                    <select id="add-money-bank" class="select w-full bg-base-200 rounded-full">
+                        <option disabled selected>Select a Bank</option>
+                        <option value="DBBL">DBBL</option>
+                        <option value="IBBL">IBBL</option>
+                        <option value="CITY">City Bank</option>
+                    </select>
+                    <br>
+                    <label class="label text-neutral font-bold">Bank Account Number</label>
+                    <input id="add-money-number" maxlength="11" minlength="11" type="text"
+                        class="input rounded-full bg-base-200 w-full" placeholder="Enter Bank 11 digit number"
+                        value="01234567890" />
+                    <br>
+                    <label class="label text-neutral font-bold">Amount to Add</label>
+                    <input id="add-money-amount" type="number" class="input rounded-full bg-base-200 w-full"
+                        placeholder="Enter Amount to Add" />
+                    <br>
+                    <label class="label text-neutral font-bold">4 Digit Pin</label>
+                    <input id="add-money-pin" maxlength="4" type="password" class="input rounded-full bg-base-200 w-full"
+                        placeholder="Enter 4 Digit Pin" />
+                    <div></div>
+                    <button id="add-money-btn" class="btn btn-primary mt-4 rounded-full">Add Money</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <section id="cashout" class="w-11/12 mx-auto py-5 hidden">
         <h2 class="text-xl font-bold mb-5">Cashout</h2>
         <div class="card bg-base-100 w-full shadow rounded-2xl">
             <div class="card-body">
@@ -87,9 +121,8 @@
                         value="01234567890" />
                     <br>
                     <label class="label text-neutral font-bold">Amount</label>
-                    <input id="cashout-amount" type="number"
-                        class="input rounded-full bg-base-200 w-full" placeholder="Enter Amount for withdraw"
-                        value="01234567890" />
+                    <input id="cashout-amount" type="number" class="input rounded-full bg-base-200 w-full"
+                        placeholder="Enter Amount for withdraw" value="01234567890" />
                     <br>
                     <label class="label text-neutral font-bold">4 Digit Pin</label>
                     <input id="cashout-pin" maxlength="4" type="password" class="input rounded-full bg-base-200 w-full"
@@ -101,7 +134,12 @@
         </div>
     </section>
 
-    <script src="script/cashout.js"></script>
+    <script src="script/machine.js"></script>
+
+    <script src="script/addMoney.js"></script>
+
+    <script src="script/cashout.js">
+    </script>
 </body>
 
 </html>
